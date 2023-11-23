@@ -2,7 +2,7 @@
 
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/Shumpei-Tanaka/obsidian-short-tab-name?style=flat-squere&sort=semver)![GitHub License](https://img.shields.io/github/license/Shumpei-Tanaka/obsidian-short-tab-name?flat-squere)
 
-[![Paypal](https://img.shields.io/badge/paypal.me-s6tanaka-white?style=flat-squere&logo=paypal)](https://paypal.me/s6tanaka)[![Paypal](https://img.shields.io/badge/buy_me_a_coffee-s6tanaka-white?style=flat-squere&logo=buymeacoffee&logocolor=#FFDD00)](https://paypal.me/s6tanaka)
+[![Paypal](https://img.shields.io/badge/paypal.me-s6tanaka-white?style=flat-squere&logo=paypal)](https://paypal.me/s6tanaka)[![Buy me a coffee](https://img.shields.io/badge/buy_me_a_coffee-s6tanaka-white?style=flat-squere&logo=buymeacoffee&logocolor=#FFDD00)](https://www.buymeacoffee.com/s6tanaka)
 
 This plugin hides filename header such as zettel uid from tab name.
 
