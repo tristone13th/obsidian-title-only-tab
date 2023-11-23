@@ -53,6 +53,9 @@ you can try to make regexp pattern in setting.
 |`[0-9]+_`|2222_aabb|aabb|
 |`.+-`|5a5a-name|name|
 
+## License
+The source code is licensed MIT.
+See LICENSE.
 
 ## Say Thank you
 

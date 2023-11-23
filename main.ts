@@ -1,3 +1,6 @@
+// Copyright (c) 2023 Shumpei Tanaka
+// This software is released under the MIT License, see LICENSE.
+
 import { App, Editor, MarkdownView, Modal, Notice, Plugin, PluginSettingTab, Setting } from 'obsidian';
 interface ShortTabNameSettings {
 	ignore: string;
