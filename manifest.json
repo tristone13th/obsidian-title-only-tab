@@ -1,0 +1,14 @@
+{
+	"id": "short-tab-name",
+	"name": "short tab name",
+	"version": "1.0.0",
+	"minAppVersion": "1.4.16",
+	"description": "set tab name to short for uid user",
+	"author": "Shumpei-Tanaka",
+	"authorUrl": "https://obsidian.md",
+	"fundingUrl": {
+		"Buy Me a Coffee": "https://www.buymeacoffee.com/s6tanaka/",
+		"Paypal.me": "https://www.paypal.me/s6tanaka/"
+	},
+	"isDesktopOnly": false
+}
