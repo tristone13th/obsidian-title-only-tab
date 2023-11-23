@@ -63,6 +63,14 @@ See LICENSE.
 If Short-Tab-Name makes your work more convinience ,
 then please give me a coffee :D
 
+links are below.
+
+[https://www.buymeacoffee.com/s6tanaka](https://www.buymeacoffee.com/s6tanaka)
+
+[https://www.paypal.me/s6tanaka/](https://www.paypal.me/s6tanaka/)
+
+
+
 <a href="https://www.buymeacoffee.com/s6tanaka" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/lato-red.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a><a href="https://www.paypal.me/s6tanaka/">
   <img alt="Support via PayPal" src="https://cdn.rawgit.com/twolfson/paypal-github-button/1.0.0/dist/button.svg" style="height: 60px  !important;object-fit: cover;border-radius:10px;"/>
 </a>
