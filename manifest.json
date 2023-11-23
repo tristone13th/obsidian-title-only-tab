@@ -1,0 +1,10 @@
+{
+	"id": "short-tab-name",
+	"name": "short tab name",
+	"version": "1.0.0",
+	"minAppVersion": "1.4.16",
+	"description": "set tab name to short for uid user",
+	"author": "Shumpei-Tanaka",
+	"authorUrl": "https://obsidian.md",
+	"isDesktopOnly": false
+}
