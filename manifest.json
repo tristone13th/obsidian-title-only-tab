@@ -1,14 +1,10 @@
 {
-	"id": "short-tab-name",
-	"name": "short tab name",
-	"version": "1.0.0",
-	"minAppVersion": "1.4.16",
-	"description": "set tab name to short for uid user",
-	"author": "Shumpei-Tanaka",
-	"authorUrl": "https://github.com/Shumpei-Tanaka/",
-	"fundingUrl": {
-		"Buy Me a Coffee": "https://www.buymeacoffee.com/s6tanaka/",
-		"Paypal.me": "https://www.paypal.me/s6tanaka/"
-	},
-	"isDesktopOnly": false
+    "id": "title-only-tab",
+    "name": "Title-Only Tab",
+    "version": "1.0.0",
+    "minAppVersion": "1.4.16",
+    "description": "Set tab name to title in frontmatter for jekyll users",
+    "author": "tristone13th",
+    "authorUrl": "https://github.com/tristone13th/",
+    "isDesktopOnly": false
 }
