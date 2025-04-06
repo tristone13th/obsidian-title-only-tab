@@ -3,7 +3,7 @@
     "name": "Title-Only Tab",
     "version": "1.0.0",
     "minAppVersion": "1.4.16",
-    "description": "Set tab name to title in frontmatter for jekyll users",
+    "description": "Set tab name to title in frontmatter for Jekyll users",
     "author": "tristone13th",
     "authorUrl": "https://github.com/tristone13th/",
     "isDesktopOnly": false
