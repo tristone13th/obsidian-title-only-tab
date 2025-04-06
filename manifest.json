@@ -1,7 +1,7 @@
 {
     "id": "title-only-tab",
     "name": "Title-Only Tab",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "minAppVersion": "1.4.16",
     "description": "Set tab name to title in frontmatter for Jekyll users",
     "author": "tristone13th",

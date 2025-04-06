@@ -1,14 +1,8 @@
 // Copyright (c) 2025 tristone13th
 // This software is released under the MIT License, see LICENSE.
-import { App, Editor, MarkdownView, Modal, Notice, Plugin, PluginSettingTab, Setting } from 'obsidian';
-interface ShortTabNameSettings {
-	ignore: string;
-	show: string;
-}
+import { App, MarkdownView, Plugin, PluginSettingTab } from 'obsidian';
 
 export default class ShortTabName extends Plugin {
-	settings: ShortTabNameSettings;
-
 	async renameTab() {
 		const leaves = this.app.workspace.getLeavesOfType('markdown');
 		leaves.forEach(leaf => {
@@ -43,8 +37,6 @@ export default class ShortTabName extends Plugin {
 	async onload() {
 		await this.renameTab();
 
-		this.addSettingTab(new ShortTabNameSettingTab(this.app, this));
-
 		this.registerEvent(
 			this.app.workspace.on('layout-change',()=>this.renameTab())
 		);
@@ -66,19 +58,5 @@ export default class ShortTabName extends Plugin {
 	}
 
 	onunload() {
-	}
-}
-
-class ShortTabNameSettingTab extends PluginSettingTab {
-	plugin: ShortTabName;
-
-	constructor(app: App, plugin: ShortTabName) {
-		super(app, plugin);
-		this.plugin = plugin;
-	}
-
-	display(): void {
-		const {containerEl} = this;
-		containerEl.empty();
 	}
 }
