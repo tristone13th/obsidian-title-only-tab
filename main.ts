@@ -6,7 +6,18 @@ export default class ShortTabName extends Plugin {
 	async renameTab() {
 		const leaves = this.app.workspace.getLeavesOfType('markdown');
 		leaves.forEach(leaf => {
+			/*
+			 * 在 Obsidian 刚打开时，由于懒加载的方式，view 没有 file 属性，需要我们
+			 * 手动去触发一次 reload。通过 setViewState 重新应用视图状态， 这会强制视图
+			 * 重新初始化并加载对应的文件，从而填充 file 属性。如果打开的标签页较多，
+			 * 可能会略微增加启动时间。
+			 */
 			const view = leaf.view as MarkdownView;
+			const state = leaf.getViewState();
+			if (state.state?.file && !view?.file) {
+				leaf.setViewState({ type: state.type, state: state.state }); 
+			}
+
 			if (view?.file) {
 				const file = view.file;
 				const cache = this.app.metadataCache.getFileCache(file);
