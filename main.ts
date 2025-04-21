@@ -1,11 +1,11 @@
 // Copyright (c) 2025 tristone13th
 // This software is released under the MIT License, see LICENSE.
-import { App, MarkdownView, Plugin, PluginSettingTab } from 'obsidian';
+import { App, MarkdownView, Plugin, PluginSettingTab } from "obsidian";
 
 export default class ShortTabName extends Plugin {
 	async renameTab() {
-		const leaves = this.app.workspace.getLeavesOfType('markdown');
-		leaves.forEach(leaf => {
+		const leaves = this.app.workspace.getLeavesOfType("markdown");
+		leaves.forEach((leaf) => {
 			/*
 			 * 在 Obsidian 刚打开时，由于懒加载的方式，view 没有 file 属性，需要我们
 			 * 手动去触发一次 reload。通过 setViewState 重新应用视图状态， 这会强制视图
@@ -15,14 +15,16 @@ export default class ShortTabName extends Plugin {
 			const view = leaf.view as MarkdownView;
 			const state = leaf.getViewState();
 			if (state.state?.file && !view?.file) {
-				leaf.setViewState({ type: state.type, state: state.state }); 
+				leaf.setViewState({ type: state.type, state: state.state });
 			}
 
 			if (view?.file) {
 				const file = view.file;
 				const cache = this.app.metadataCache.getFileCache(file);
 				const frontmatterTitle = cache?.frontmatter?.title;
-				const tabHeaderEl = (leaf as any).tabHeaderEl as HTMLElement | undefined;
+				const tabHeaderEl = (leaf as any).tabHeaderEl as
+					| HTMLElement
+					| undefined;
 				/*
 				 * Possible alternatives (from deepseek-r1)
 				 *
@@ -33,13 +35,21 @@ export default class ShortTabName extends Plugin {
 				 *  2. const tabHeaderEl = this.findTabHeaderByView(view);
 				 */
 				if (tabHeaderEl) {
-					const titleEl = tabHeaderEl.querySelector('.workspace-tab-header-inner-title');
+					const titleEl = tabHeaderEl.querySelector(
+						".workspace-tab-header-inner-title",
+					);
 					if (titleEl) {
 						titleEl.setText(frontmatterTitle || file.basename);
 					}
 
-					tabHeaderEl.setAttribute('aria-label', frontmatterTitle || file.basename);  // 无障碍标签
-					tabHeaderEl.setAttribute('title', frontmatterTitle || file.basename);
+					tabHeaderEl.setAttribute(
+						"aria-label",
+						frontmatterTitle || file.basename,
+					); // 无障碍标签
+					tabHeaderEl.setAttribute(
+						"title",
+						frontmatterTitle || file.basename,
+					);
 				}
 			}
 		});
@@ -49,25 +59,22 @@ export default class ShortTabName extends Plugin {
 		await this.renameTab();
 
 		this.registerEvent(
-			this.app.workspace.on('layout-change',()=>this.renameTab())
+			this.app.workspace.on("layout-change", () => this.renameTab()),
 		);
 
 		this.registerEvent(
-			this.app.workspace.on('active-leaf-change',()=>this.renameTab())
+			this.app.workspace.on("active-leaf-change", () => this.renameTab()),
 		);
 
 		this.registerEvent(
-			this.app.workspace.on('file-open',()=>this.renameTab())
+			this.app.workspace.on("file-open", () => this.renameTab()),
 		);
 
+		this.registerEvent(this.app.vault.on("rename", () => this.renameTab()));
 		this.registerEvent(
-			this.app.vault.on('rename',()=>this.renameTab())
-		);
-		this.registerEvent(
-			this.app.metadataCache.on('changed',()=>this.renameTab())
+			this.app.metadataCache.on("changed", () => this.renameTab()),
 		);
 	}
 
-	onunload() {
-	}
+	onunload() {}
 }
